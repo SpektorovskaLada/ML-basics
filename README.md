@@ -1,72 +1,72 @@
-# Інтелектуальний аналіз даних (ІАД)  
-Лабораторні роботи з дисципліни **«Інтелектуальний аналіз даних»** 
+# Introduction to machine learning
+Laboratory work on the discipline **"Introduction to ML"**
 ---
-### Лабораторна робота №1
-**Тема:** Базові навички роботи в середовищi Python
-Завдання: Задано неорiєнтовний граф G з V вершинами, де ваги дуг dij вiдомi для ∀i, j = 1, ..., V , i ̸= j. Побудувати мiнiмальне покриваюче дерево - пiдграф J графу G, використовуючи алгоритм Прима:
-- Вибрати будь-яку вершину графу G i додати її до J.
-- Додати до J ребро з найменшою вагою, яке з’єднує вершину пiдграфу J з вершиною, яка не належить J.
-- Виконувати крок 2 до тих пiр поки до J не буде додано V − 1 ребро.
+### Laboratory work #1
+**Topic:** Basic skills in working in the Python environment
+Task: Given an undirected graph G with V vertices, where the weights of the arcs dij are known for ∀i, j = 1, ..., V , i ̸= j. Construct a minimum spanning tree - a subgraph J of the graph G, using Prim's algorithm:
+- Choose any vertex of the graph G and add it to J.
+- Add to J the edge with the smallest weight that connects the vertex of the subgraph J with a vertex that does not belong to J.
+- Perform step 2 until V − 1 edges are added to J.
 
-### Лабораторна робота №2  
-**Тема:** Побудова та оцiнювання якостi наївної баєсiвської моделi для класифiкацiї засобами бiблiотеки Scikit-Learn Python.
-- Початковi данi:
-  - (а) sklearn.datasets.make_moons
-  - (б) sklearn.datasets.load_digits
-  - Дані попередньо скориговані для роботи з MultinomialNB (лише додатні значення).  
-- Завдання:
-  - Побудова моделей класифікації (GaussianNB та MultinomialNB).  
-  - Перевірка на навчальних і валідаційних множинах.  
-  - Оцінка перенавчання (overfitting).  
-  - Розрахунок апостеріорних ймовірностей ('predict_proba').  
-- Висновок:  
-  - Для 'make_moons' кращу точність показав **GaussianNB**.  
-  - Для 'load_digits' вищу точність продемонстрував **MultinomialNB**.  
-  - В обох випадках точність на тестових даних була близька до навчальних → перенавчання не спостерігається.  
----
-
-### Лабораторна робота №3  
-**Тема:** Класифікація даних за допомогою нейронних мереж  
-- Початковi данi:
-  - (а) sklearn.datasets.make_moons
-  - (б) sklearn.datasets.load_digits
-- Завдання:
-  - Побудова моделей класифікації на навчальних/валідаційних множинах.  
-  - Експерименти з кількістю нейронів у прихованому шарі.  
-  - Оцінка якості: **confusion matrix**, precision, recall, F1-score.  
-  - Побудова **PR-кривих**, **ROC-кривих**, розрахунок **AUC**.  
-- Висновок: збільшення кількості нейронів впливає на якість моделі; оптимальна архітектура дозволяє досягти стабільного розподілу даних без перенавчання.  
-
+### Laboratory work №2
+**Topic:** Construction and assessment of the quality of a naive Bayesian model for classification using the Scikit-Learn Python library.
+- Initial data:
+- (a) sklearn.datasets.make_moons
+- (b) sklearn.datasets.load_digits
+- Data pre-adjusted to work with MultinomialNB (only positive values).
+- Tasks:
+- Construction of classification models (GaussianNB and MultinomialNB).
+- Testing on training and validation sets.
+- Assessment of overfitting.
+- Calculation of posterior probabilities ('predict_proba').
+- Conclusion:
+- For 'make_moons', **GaussianNB** showed the best accuracy.
+- For 'load_digits', the highest accuracy was demonstrated by **MultinomialNB**.
+- In both cases, the accuracy on the test data was close to the training data → no overtraining is observed.
 ---
 
-### Лабораторна робота №4  
-**Тема:** Кластеризація даних
-- Початковi данi:
-    - make_blobs
-    - make_circles
-- Завдання:
-  - Візуалізація вихідних даних.  
-  - Побудова моделей кластеризації.  
-  - Порівняння альтернативних моделей зі зміною параметрів і метрик відстані.  
-- Метрики якості (модуль 'sklearn.metrics'):  
-  - Estimated Number of Clusters  
-  - Adjusted Rand Index  
-  - Silhouette Coefficient  
-  - Davies–Bouldin Index  
-- Висновок: кластери добре розділені; індекси підтверджують коректність моделі навіть при різних параметрах.  
+### Laboratory work #3
+**Topic:** Data classification using neural networks
+- Initial data:
+- (a) sklearn.datasets.make_moons
+- (b) sklearn.datasets.load_digits
+- Task:
+- Building classification models on training/validation sets.
+- Experiments with the number of neurons in the hidden layer.
+- Quality assessment: **confusion matrix**, precision, recall, F1-score.
+- Building **PR-curves**, **ROC-curves**, calculating **AUC**.
+- Conclusion: increasing the number of neurons affects the quality of the model; the optimal architecture allows achieving a stable data distribution without overtraining.
 
 ---
-### Лабораторна робота №5 
-**Тема:** Побудова та оцiнювання ансамблiв моделей класифiкацiї та регресiї з використанням бiблiотеки Scikit-Learn Python
-- Метод: GradientBoostingRegressor
-- Початковi данi: sklearn.datasets.load_diabetes
-- Завдання:
-    - Побудувати ансамбль моделі заданим методом.
-    - Порівняти роботи ансамблю з індивідуальними моделями.
-    - Розрахувати точність, зміщення та дисперсію. 
-- Висновок: ансамблі більш ефективні для задач, де потрібна висока точність.
 
-### Використані бібліотеки
+### Lab #4
+**Topic:** Data Clustering
+- Input data:
+- make_blobs
+- make_circles
+- Tasks:
+- Visualization of the original data.
+- Building clustering models.
+- Comparison of alternative models with changing parameters and distance metrics.
+- Quality metrics (module 'sklearn.metrics'):
+- Estimated Number of Clusters
+- Adjusted Rand Index
+- Silhouette Coefficient
+- Davies–Bouldin Index
+- Conclusion: the clusters are well separated; the indices confirm the correctness of the model even with different parameters.
+
+---
+### Lab #5
+**Topic:** Building and evaluating ensembles of classification and regression models using the Scikit-Learn Python library
+- Method: GradientBoostingRegressor
+- Initial data: sklearn.datasets.load_diabetes
+- Tasks:
+- Build an ensemble of models using the given method.
+- Compare the performance of the ensemble with individual models.
+- Calculate the accuracy, bias, and variance.
+- Conclusion: ensembles are more effective for tasks where high accuracy is required.
+
+### Libraries used
 - numpy
 - pandas
 - matplotlib
